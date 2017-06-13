@@ -8,4 +8,4 @@ COPY composer.lock /app
 RUN composer install --no-scripts --no-autoloader
 COPY . /app
 RUN composer dump-autoload --optimize && \
-	composer run-scripts post-install-cmd
+	composer run-script post-install-cmd
