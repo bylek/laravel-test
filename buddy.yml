@@ -1,0 +1,15 @@
+- pipeline: "asd"
+  trigger_mode: "MANUAL"
+  ref_name: "master"
+  actions:
+  - action: "Execute: ls"
+    type: "BUILD"
+    docker_image_name: "library/node"
+    docker_image_tag: "6"
+    execute_commands:
+    - "ls"
+    setup_commands:
+    - "# Executed on the first pipeline execution only"
+    - "# Popular use case: install packages required by your Run Commands"
+    - "# Changing the image in the Environment tab will run the commands again"
+    - "npm install -g gulp grunt-cli"
